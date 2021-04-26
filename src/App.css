@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+.app {
+}
+
+body {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  color: #222;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-bottom: 1px solid #99c5c4;
+}
+
+.header {
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #99c5c4;
+  text-align: center;
+}
+
+.navbar__button {
+  padding: 10px;
+  color: inherit;
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+.selected {
+  color: #99c5c4;
+}
+
+.navbar__button:hover {
+  font-weight: 500;
+  color: #99c5c4;
+}
+
+.typography {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  color: black;
+  max-width: 50%;
+  text-align: center;
+  align-self: center;
+}
+
+.list {
+  margin-top: 25px;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 55%;
+  align-self: center;
+}
+
+.direction-column {
+  flex-direction: column;
+}
+
+.direction-row {
+  flex-direction: row;
+}
+
+.icon-placeholder {
+  display: flex;
+  margin: auto;
+  width: 75px;
+  height: 75px;
+  background-color: #99c5c4;
+}
+
+.list-item {
+  padding: 15px;
+  margin-bottom: 25px;
+  flex-grow: 1;
+  max-width: 25%;
+}
+
+.title {
+  padding: 10px 0 0;
+  margin: 0;
+}
+
+.subtitle {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+}
+
+.contacts {
+  display: flex;
+}
+
+.contacts-item {
+  padding: 15px;
+  margin: 25px 0 0;
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.size-l {
+  font-size: 2rem;
+}
+
+.font-weight-light {
+  font-weight: 400;
+}
