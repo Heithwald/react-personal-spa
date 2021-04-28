@@ -63,7 +63,7 @@ body {
   text-align: center;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 55%;
+  max-width: 50%;
   align-self: center;
 }
 
@@ -88,6 +88,11 @@ body {
   margin-bottom: 25px;
   flex-grow: 1;
   max-width: 25%;
+}
+
+.list-item__title {
+  padding: 10px 0 0;
+  margin: 0;
 }
 
 .title {
@@ -126,4 +131,40 @@ body {
 
 .font-weight-light {
   font-weight: 400;
+}
+
+@media (orientation: portrait) {
+  @media (max-width: 1440px) {
+    .content {
+      max-width: 95%;
+    }
+
+    .navbar__button {
+      font-size: 2rem;
+    }
+
+    .typography {
+      font-size: 1.5rem;
+      max-width: 90%;
+    }
+
+    .list {
+      max-width: 90%;
+    }
+
+    .list-item {
+      font-size: 1.7rem;
+      padding: 10px;
+      margin-bottom: 15px;
+      flex-grow: 1;
+      max-width: 25%;
+    }
+
+    .list-item__title {
+      font-size: 1.5rem;
+    }
+
+    .subtitle {
+    }
+  }
 }

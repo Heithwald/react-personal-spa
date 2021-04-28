@@ -9,7 +9,7 @@ function Projects() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <h4>Currently under construction</h4>
+      <h4 className="title">Currently under construction</h4>
     </motion.div>
   );
 }

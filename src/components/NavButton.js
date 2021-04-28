@@ -5,12 +5,7 @@ const NavButton = (props) => {
   const { text, to } = props;
 
   return (
-    <NavLink
-      className="navbar__button"
-      activeClassName="selected"
-      data-navButton="button"
-      to={to}
-    >
+    <NavLink className="navbar__button" activeClassName="selected" to={to}>
       {text}
     </NavLink>
   );
