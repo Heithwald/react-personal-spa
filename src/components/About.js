@@ -14,9 +14,10 @@ function About() {
         <br />
         Current state of this barebones SPA may not be the best depiction of my
         current skillset, but rest assured, I will add all the most explicit
-        solutions soon enough. I am currently getting code moved from a
-        Material-UI based SPA to a fully self-written one, as it got too over
-        the top and gets harder to follow with every other feature I am adding.
+        solutions soon enough. I have already moved my code from a Material-UI
+        based SPA to a fully self-written one. Material UI had got too verbose
+        and just over the top and got harder to follow with every other feature
+        I was adding.
         <br />
         <br />
         Given the apps very basic state, you would better reach out to me

@@ -25,8 +25,8 @@ function Contacts() {
         <div className="contacts-item size-l">
           <div className="icon-placeholder"></div>
           <h4 className="title">
-            <a className="link" href="mailto:tsymbalenko.o@gmail.com">
-              tsymbalenko.o@gmail.com
+            <a className="link" href="mailto:heithwald@gmail.com@gmail.com">
+              heithwald@gmail.com
             </a>
           </h4>
           <h6 className="subtitle">

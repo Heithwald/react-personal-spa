@@ -1,0 +1,12 @@
+{
+  "test": [
+    {
+      "name": "Heithwald",
+      "lastName": "Vaskebjorn",
+      "gender": "Male",
+      "city": "Moscow",
+      "email": "heithwald@gmail.com",
+      "id": 1
+    }
+  ]
+}
