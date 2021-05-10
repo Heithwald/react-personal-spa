@@ -17,6 +17,10 @@ const DisplayAccounts = () => {
       });
   };
 
+  const deleteAccount = (id) => {
+    axios.delete(`http://localhost:8000/test/${id}`);
+  };
+
   useEffect(fetchAccounts, []);
   // specifying 'accounts' as a dependency allows for an automatic update of a list of records, BUT: it becomes an infinite loop of requests + it is suboptimal for the performance reasons
 
@@ -34,10 +38,9 @@ const DisplayAccounts = () => {
               <th>City</th>
               <th>E-mail</th>
               <th>
-                <button className="record-button" onClick={fetchAccounts}>
+                <button className="refresh-button" onClick={fetchAccounts}>
                   Refresh list
                 </button>
-                {/* #FIX does not take the full width */}
               </th>
             </tr>
           </thead>
@@ -51,8 +54,16 @@ const DisplayAccounts = () => {
                 <td>{account.city}</td>
                 <td>{account.email}</td>
                 <td>
-                  <button className="record-button">Delete record</button>{" "}
-                  {/* implement the delete function */}
+                  <button
+                    className="delete-record-button"
+                    onClick={() => {
+                      axios
+                        .delete(`http://localhost:8000/test/${account.id}`)
+                        .then(fetchAccounts);
+                    }}
+                  >
+                    Delete record
+                  </button>
                 </td>
               </tr>
             ))}
@@ -62,15 +73,5 @@ const DisplayAccounts = () => {
     </AnimatePresence>
   );
 };
-
-/*
-<AnimatePresence>
-        {accounts.map((account) => (
-          <p key={account.id} className="account-record">
-            {JSON.stringify(account, null, " ")}
-          </p>
-        ))}
-      </AnimatePresence>
-*/
 
 export default DisplayAccounts;
