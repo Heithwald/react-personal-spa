@@ -7,6 +7,7 @@ import * as Yup from "yup";
 const initialValues = {
   name: "",
   lastName: "",
+  gender: "",
   city: "",
   email: "",
 };
@@ -77,7 +78,7 @@ const YouTubeForm = () => {
       </div>
 
       <div className="form-control">
-        {/* #FIX something is wrong - form can be submitted even if the field was not touched and left with a default empty/disabled value. Formik thinks it has a default value anyway */}
+        {/* #FIX inconsistent approach for handling empty defauld selection, check Formik docs/videos for a propes solution without warnings from React */}
         <label className="label" htmlFor="gender">
           Gender
         </label>
@@ -87,7 +88,7 @@ const YouTubeForm = () => {
           defaultValue={"default"}
           {...formik.getFieldProps("gender")}
         >
-          <option value="default" disabled></option>
+          <option defaultValue disabled></option>
           <option>Male</option>
           <option>Female</option>
           <option>Other</option>
