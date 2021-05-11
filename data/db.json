@@ -1,9 +1,13 @@
 {
   "test": [
     {
-      "id": "1",
-      "name": "Heithwald",
-      "lastName": "Vaskebjorn"
+      "name": "Test",
+      "lastName": "Test",
+      "gender": "Other",
+      "city": "Test",
+      "email": "test.test@gmail.com",
+      "comments": "Test",
+      "id": 1
     }
   ]
 }

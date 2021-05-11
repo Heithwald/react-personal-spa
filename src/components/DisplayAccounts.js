@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const DisplayAccounts = () => {
   const [accounts, setAccounts] = useState([]);
@@ -45,28 +45,37 @@ const DisplayAccounts = () => {
             </tr>
           </thead>
           <tbody>
-            {accounts.map((account) => (
-              <tr key={account.id} className="account-table__row">
-                <td>{`${account.id}. `}</td>
-                <td>{account.name}</td>
-                <td>{account.lastName}</td>
-                <td>{account.gender}</td>
-                <td>{account.city}</td>
-                <td>{account.email}</td>
-                <td>
-                  <button
-                    className="delete-record-button"
-                    onClick={() => {
-                      axios
-                        .delete(`http://localhost:8000/test/${account.id}`)
-                        .then(fetchAccounts);
-                    }}
-                  >
-                    Delete record
-                  </button>
-                </td>
-              </tr>
-            ))}
+            <AnimatePresence>
+              {accounts.map((account) => (
+                <motion.tr
+                  key={account.id}
+                  className="account-table__row"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <td>{`${account.id}. `}</td>
+                  <td>{account.name}</td>
+                  <td>{account.lastName}</td>
+                  <td>{account.gender}</td>
+                  <td>{account.city}</td>
+                  <td>{account.email}</td>
+                  <td>
+                    {/* add a prompt: yes/>no for delete <--------------------------------------------------------*/}
+                    <button
+                      className="delete-record-button"
+                      onClick={() => {
+                        axios
+                          .delete(`http://localhost:8000/test/${account.id}`)
+                          .then(fetchAccounts);
+                      }}
+                    >
+                      Delete record
+                    </button>
+                  </td>
+                </motion.tr>
+              ))}
+            </AnimatePresence>
           </tbody>
         </table>
       </div>

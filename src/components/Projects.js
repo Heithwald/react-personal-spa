@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Component imports
-import YouTubeForm from "./YouTubeForm";
+import UserForm from "./UserForm";
 import DisplayAccounts from "./DisplayAccounts";
 
 function Projects() {
@@ -17,7 +17,7 @@ function Projects() {
         Here is an growning list of components, demonstrating the solutions I am
         able to implement.
       </p>
-      <YouTubeForm />
+      <UserForm />
       <DisplayAccounts />
     </motion.div>
   );
