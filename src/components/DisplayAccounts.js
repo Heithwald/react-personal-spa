@@ -36,6 +36,7 @@ const DisplayAccounts = () => {
               <th>Last name</th>
               <th>Gender</th>
               <th>City</th>
+              <th>Address</th>
               <th>E-mail</th>
               <th>
                 <button className="refresh-button" onClick={fetchAccounts}>
@@ -59,6 +60,7 @@ const DisplayAccounts = () => {
                   <td>{account.lastName}</td>
                   <td>{account.gender}</td>
                   <td>{account.city}</td>
+                  <td>{account.address}</td>
                   <td>{account.email}</td>
                   <td>
                     {/* add a prompt: yes/>no for delete <--------------------------------------------------------*/}

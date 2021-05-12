@@ -5,6 +5,7 @@
       "lastName": "Test",
       "gender": "Other",
       "city": "Test",
+      "address": "Test",
       "email": "test.test@gmail.com",
       "comments": "Test",
       "id": 1

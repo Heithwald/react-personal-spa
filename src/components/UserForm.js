@@ -4,15 +4,31 @@ import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useTransform } from "framer-motion";
+import TextError from "./TextError";
 
+// Form initial values
 const initialValues = {
   name: "",
   lastName: "",
   gender: "",
   city: "",
+  address: "",
   email: "",
   comments: "",
 };
+
+// Fields' validation schema for Yup
+const validationSchema = Yup.object({
+  name: Yup.string().required("This field is required"),
+  lastName: Yup.string().required("This field is required"),
+  email: Yup.string()
+    .email("Invalid email format")
+    .required("This field is required"),
+  city: Yup.string().required("This field is required"),
+  address: Yup.string().required("This field is required"),
+  gender: Yup.string().required("This field is required"),
+  comments: Yup.string().required("This field is required"),
+});
 
 const onSubmit = (values) => {
   axios
@@ -26,18 +42,6 @@ const onSubmit = (values) => {
   document.querySelector(".form-submit").innerText = "Form submitted";
   /* add code for clearing form fields <------------------------------------------------------------------------------- */
 };
-
-const onBlur = () => {};
-
-const validationSchema = Yup.object({
-  name: Yup.string().required("This field is required"),
-  lastName: Yup.string().required("This field is required"),
-  email: Yup.string()
-    .email("Invalid email format")
-    .required("This field is required"),
-  city: Yup.string().required("This field is required"),
-  gender: Yup.string().required("This field is required"),
-});
 
 /* 
 Formik works as a context provider. Inputs are automatically hooked up to the top level Formik component 
@@ -57,10 +61,7 @@ const UserForm = () => {
             Name
           </label>
           <Field type="text" id="name" name="name" />
-          <ErrorMessage name="name">
-            {(message) => <div className="field-error-message">{message}</div>}
-            {/* Leave it as boilerplate for now */}
-          </ErrorMessage>
+          <ErrorMessage name="name" component={TextError} />
         </div>
 
         <div className="form-control">
@@ -68,9 +69,7 @@ const UserForm = () => {
             Last name
           </label>
           <Field type="text" id="lastName" name="lastName" />
-          <ErrorMessage name="lastName">
-            {(message) => <div className="field-error-message">{message}</div>}
-          </ErrorMessage>
+          <ErrorMessage name="lastName" component={TextError} />
         </div>
 
         <div className="form-control">
@@ -84,9 +83,7 @@ const UserForm = () => {
             <option>Female</option>
             <option>Other</option>
           </Field>
-          <ErrorMessage name="gender">
-            {(message) => <div className="field-error-message">{message}</div>}
-          </ErrorMessage>
+          <ErrorMessage name="gender" component={TextError} />
         </div>
 
         <div className="form-control">
@@ -94,9 +91,15 @@ const UserForm = () => {
             City
           </label>
           <Field type="text" id="city" name="city" />
-          <ErrorMessage name="city">
-            {(message) => <div className="field-error-message">{message}</div>}
-          </ErrorMessage>
+          <ErrorMessage name="city" component={TextError} />
+        </div>
+
+        <div className="form-control">
+          <label className="label" htmlFor="address">
+            Address
+          </label>
+          <Field type="text" id="address" name="address" />
+          <ErrorMessage name="address" component={TextError} />
         </div>
 
         <div className="form-control">
@@ -104,9 +107,7 @@ const UserForm = () => {
             E-mail
           </label>
           <Field type="text" id="email" name="email" />
-          <ErrorMessage name="city">
-            {(message) => <div className="field-error-message">{message}</div>}
-          </ErrorMessage>
+          <ErrorMessage name="email" component={TextError} />
         </div>
 
         <div className="form-control">
@@ -114,6 +115,7 @@ const UserForm = () => {
             Comments
           </label>
           <Field type="text" id="comments" name="comments" as="textarea" />
+          <ErrorMessage name="comments" component={TextError} />
         </div>
 
         <button className="submit-button" type="submit">
