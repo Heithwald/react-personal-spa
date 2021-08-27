@@ -8,4 +8,4 @@ This one is quite barebones at the moment, but it will become something in a sho
 ````json-server --watch ./data/db.json --port 8000````<br/><br/>
 **yarn**<br/>
 ````yarn json-server --watch ./data/db.json --port 8000````<br/><br/>
-3. Start the app on **port 8000** and test its functionality
+3. Start the app and test its functionality
